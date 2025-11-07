@@ -198,5 +198,26 @@ If you are interested in leaving a message to our research team, feel free to em
 <p align="center">
     <a href="http://www.nwpu-aslp.org/">
         <img src="src/ASLP.jpg" width="400"/>
+ 
+## Repository update (November 2025)
+
+The `main` branch now contains the full LoneStar application. A force push was performed to replace previous history. If you have a local clone of this repository, update it with:
+
+- git fetch
+- git checkout main
+- git reset --hard origin/main
+
+### Large files and Git LFS
+We attempted to migrate large binaries (e.g., ONNX models and dataset `.pt` files) to Git LFS to keep the repository lean. GitHub reported that the repo exceeded its LFS storage budget, so LFS objects cannot be pushed for this repo at the moment. As a result, large files remain in regular Git history.
+
+If you’d like to enable LFS in the future:
+- Purchase/enable additional GitHub LFS storage for the account that owns this repo, or
+- Move the largest files to an external download location and reference them during setup/inference.
+
+### Branch setup
+Local development is configured so that `main` tracks `origin/main` on https://github.com/RJF-72/l32thestar.git.
+
+### Recommended: branch protection
+Enable branch protection on `main` (require at least 1 PR review and disallow force pushes). You can do this via GitHub → Settings → Branches, or use the script at `scripts/setup-branch-protection.ps1` with a personal access token (PAT).
     </a>
 </p>
